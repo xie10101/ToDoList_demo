@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.items{
+list-style: none;
+width: 100%;
+height: 56%;
+overflow: auto;
+}

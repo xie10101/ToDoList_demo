@@ -1,13 +1,43 @@
 .list {
     margin: 0 auto;
     /* 设置宽高后生效 */
-    margin-top: 300px;
-    width: 400px;
-    height: 400px;
+    margin-top: 200px;
+    width: 500px;
+    height: 550px;
     background-color: #fff;
+    border-radius: 15px;
+    box-shadow:3px 10px 20px 3px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
 }
-Search{
-    width: 100px;
+.title{
+color: rgb(0, 55, 255,0.5);
+font-size: 38px;
+font-family: 'Arial', LiSu,sans-serif;
+text-align: center;
+margin-bottom: 20px;
+
 }
 /* 组件一般使用组件名作为最外层div名称 */
 
+.header{
+    display: flex;
+    align-items: center;  
+    justify-content: space-around;
+}
+.footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer_total{
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(0, 55, 255,0.5);
+}
+/* 直接使用标签名设置样式不会设
+置哈希标签名-导致其他组件中标签
+样式被影响 */

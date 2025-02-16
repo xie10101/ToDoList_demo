@@ -1,0 +1,20 @@
+.task{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+.less
+{
+    font-size: 30px;
+    color: rgba(22, 119, 255)
+}
+.Divider{
+    margin: 0;
+    padding: 0;
+}
+.txt{
+    font-size: 20px;
+    font-weight: 500;
+    font-family:'Noto Sans',STXihei;
+}
