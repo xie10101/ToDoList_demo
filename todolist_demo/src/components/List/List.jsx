@@ -5,30 +5,23 @@ import Search from "../Search/Search";
 import { Button,Divider,Modal } from "antd";
 import { useState } from "react";
 import {Input} from "antd";
+
 const tasks=[
   {task:"做数学作业",done:false,id:12},
   {task:"做语文作业",done:false,id:22},
   {task:"做英语作业",done:true,id:32}
 ]
+const dones=1;
+
+// 以上为基础数据
 
 const List = () => {
 const  [list,setList]=React.useState(tasks);
 const  [newtask,setNewtask]=React.useState("");
-const [donetasks,setdonetasks] =React.useState(1);
+const  [donetasks,setdonetasks] =React.useState(dones);
 // 渲染之后执行-渲染不上
-// useEffect(
-//   ()=>{
-//    list.forEach((item)=>{
-//   if(item.done===true)
-//   {
-//     done_tasks++
-//   }
-//    })
-//   console.log(done_tasks)
-//   },[list,done_tasks]
-// )
 
-
+// 添加任务
 const addList =(dec)=>{
   const newList=list;//进行浅拷贝；
   newList.push({
@@ -69,6 +62,12 @@ const deleteTask=(task)=>{
 let newlist=list;
 // 过滤函数进行数组的过滤：
 newlist=newlist.filter((item)=>{
+  if(item.task===task){
+    if(item.done===true)
+    {
+      setdonetasks((prestate)=>prestate-1)
+    }
+  }
 return item.task!==task
 // 返回值为true/false item数据保存/舍弃
 })
@@ -108,12 +107,16 @@ newList=newList.filter((item)=>{
 setList(newList);
 
 }
-
+// 删除完成项
 const delFinsh=(e)=>{
   //对操作数据进行浅赋值：
 let newlist=list;
 // 过滤函数进行数组的过滤：
 newlist=newlist.filter((item)=>{
+  if(item.done===true)
+  {
+    setdonetasks((prestate)=>prestate-1)
+  }
 return item.done === false
 })
 setList(newlist);
