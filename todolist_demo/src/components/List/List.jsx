@@ -5,11 +5,17 @@ import Search from "../Search/Search";
 import { Button,Divider,Modal } from "antd";
 import { useState } from "react";
 import {Input} from "antd";
-
+import ListContext from "../../store/ListText"
 const tasks=[
   {task:"做数学作业",done:false,id:12},
-  {task:"做语文作业",done:false,id:22},
-  {task:"做英语作业",done:true,id:32}
+  {task:"做文作业",done:false,id:22},
+  {task:"做语作业",done:true,id:32},
+  {task:"做学作业",done:false,id:42},
+  {task:"做语文作业",done:false,id:52},
+  {task:"做英语作业",done:true,id:62},
+  {task:"做数学业",done:false,id:72},
+  {task:"做语文业",done:false,id:82},
+  {task:"做英语业",done:true,id:92}
 ]
 const dones=1;
 
@@ -122,17 +128,19 @@ return item.done === false
 setList(newlist);
 }
     return (
+      
       <>
+      <ListContext.Provider  value={{list,addList,deleteTask,searchTask,finishTask}}>
         <div className={classes.list}>
           <h1 className={classes.title}>Just To do !</h1>
           <div className={classes.header} >
-            <Search search={searchTask}></Search>
+            <Search></Search>
             <div className="Add"> 
             <Button type="primary" onClick={showModal}>添加</Button>
             </div>
           </div>
           <Divider></Divider>
-           <ListItems list={list} finish={finishTask} del={deleteTask}></ListItems>
+           <ListItems></ListItems>
           <Divider></Divider>
           <div className={classes.footer}>
             <p className={classes.com}>已完成——{donetasks}/{list.length}</p>
@@ -144,8 +152,8 @@ setList(newlist);
         <Modal title="添加新任务" className={classes.modal} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <Input type="text" onChange={handleInputChange} value={newtask} />
         </Modal>
+        </ListContext.Provider>
         </>
-      );
+   );
 }
- 
 export default List;

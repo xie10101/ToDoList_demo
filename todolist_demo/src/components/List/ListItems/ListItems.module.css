@@ -8,3 +8,6 @@ width: 100%;
 height: 56%;
 overflow: auto;
 }
+.items::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+  }
