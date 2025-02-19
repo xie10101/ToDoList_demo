@@ -2,7 +2,7 @@ import classes from "./ListItems.module.css";
 import Item from "./Item/Item";
 import { useContext } from "react";
 import ListContext from "../../../store/ListText"
-const ListItems = (props) => {
+const ListItems = () => {
     const {list} =useContext(ListContext);
     return ( 
         <ul className={classes.items}>
