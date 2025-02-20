@@ -1,0 +1,56 @@
+.body
+{
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.body h1{
+    width: 240px;
+    height: 80px;
+    font-size: 76px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 56px;
+    color: rgba(44, 44, 44, 1);
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom:13px;
+}
+.body h2{
+width: 556px;
+height: 124px;
+opacity: 1;
+/** 文本1 */
+font-size:58px;
+font-weight: 700;
+letter-spacing: 0px;
+line-height: 56px;
+color: rgba(44, 44, 44, 1);
+margin-bottom: 45px;
+}
+.body h2 span{
+/** 文本2 */
+font-size:58px;
+font-weight: 700;
+letter-spacing: 0px;
+line-height: 56px;
+color: rgba(123, 222, 251, 1);
+text-align: center;
+vertical-align: middle;
+margin-left: 15px;
+}
+.body p{
+    /* 文本块元素--需要设置宽高-限制换行 */
+width: 484px;
+height: 63px;
+opacity: 1;
+/** 文本1 */
+font-size: 18px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 28px;
+color: rgba(180, 180, 180, 1);
+text-align: center;
+vertical-align: middle;
+}

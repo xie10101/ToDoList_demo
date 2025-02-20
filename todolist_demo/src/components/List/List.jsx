@@ -7,69 +7,9 @@ import { useState } from "react";
 import {Input} from "antd";
 import { addList,delFinishList } from "../../store/reducer/TasksReducer";
 import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 const dones=1;
-// 以上为基础数据
-// 定义reducer函数：
-// const reducerList=(state,action)=>{
-//   // 统一为原始数据设置浅赋值：
-//   let newList=[...state];
-//   switch(action.type)
-//   {
-//   case "add":
-//     //实现逻辑
-//     newList.push({
-//       task:action.payload,
-//       done:false,
-//       id:Date.now()
-//     });
-//     return newList;//返回新数据
-//   case "delete":
-//     newList=newList.filter((item)=>{
-//   /*
-//         if(item.done===true)
-//         {
-//           setdonetasks((prestate)=>prestate-1)
-//         }
-//        */
-//         return item.task!==action.payload
-//     })
-//     return newList;
-//    case "search":
-//     //实现逻辑
-//   if(action.payload.trim()==="")
-//   {
-//   return tasks ;
-//   }
-//   newList=newList.filter((item)=>{
-//      return item.task.includes(action.payload.trim())
-//    })
-//     return newList;
-
-//    case "finish":
-//     //实现逻辑
-//       // 遍历数组：
-
-//     newList=newList.map((item)=>{
-//        console.log(item.task===action.payload)
-//        if(item.task===action.payload){
-//          item.done=!item.done;
-//        }
-//        return item;
-//      })
-//     return newList;
-//    case "delfinish":
-//       // 过滤函数进行数组的过滤：
-//       newList=newList.filter((item)=>{
-//       return item.done === false
-//       })
-//       return newList;
-//    default:
-//     return newList;
-//   }
-// // 统一返回新数据 --不再使用set设置
-// }
-
 const List = () => {
 
 const  [newtask,setNewtask]=React.useState("");
@@ -102,9 +42,10 @@ const handleInputChange = (e) => {
 }
 
     return (
+      
       <>
-
         <div className={classes.list}>
+         <Outlet></Outlet>
           <h1 className={classes.title}>Just To do !</h1>
           <div className={classes.header} >
             <Search></Search>
@@ -124,6 +65,7 @@ const handleInputChange = (e) => {
              }>删除已完成任务</Button>
           </div>
         </div>
+        
         <Modal title="添加新任务" className={classes.modal} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <Input type="text" onChange={handleInputChange} value={newtask} />
         </Modal>

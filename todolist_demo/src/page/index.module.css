@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '微软雅黑';
+}
+.main{
+    width: 100vw;
+    padding-top: 38px;
+}
+.container{
+    width: 991px;
+    height: 100%;
+    margin: 0 auto;
+}
+.header{
+   width: 892px;
+   height: 44px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   position: relative
+}
+.header a{
+    text-decoration: none;
+    color: #969292;
+}
+.header a:hover{
+    color: #000;
+    /* 单独设置字体变大会造成其他位
+    置由于父组件设置 space-between子组件其他位置变化 */
+}
+.deco1{
+    position: absolute;
+    top: -38px;
+    left: -70px;
+    width: 160px;
+    height: 140px;
+    background-color: #f7faff;
+    z-index: 99;
+    border-bottom-right-radius:150px ;
+}
+.logo{
+  width: 175px;
+   z-index: 999;
+  display: flex;
+}
+.logo span{
+  width:28px;
+  margin-right: 4px;
+}
+.logo p{
+    
+    width: 145px;
+    height: 41px;
+    opacity: 1;
+    /** 文本1 */
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 27.44px;
+    color: rgba(65, 72, 89, 1);
+    margin-left: 5px;
+    padding-top: 8px;
+}
+.nav{
+    width: 345px;
+    margin-right: 339px;
+}
+.nav ul{
+    display: flex;
+    margin-left: 30px;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+}
+.rest{
+width: 170px;
+height: 44px;
+opacity: 1;
+border-radius: 8px;
+border: 1px solid rgba(56, 138, 247, 1);
+padding: 8px;
+display: flex;
+text-align: center;
+line-height: 28px;
+}
+.footer{
+
+
+}
